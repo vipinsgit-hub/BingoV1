@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Bingo Game</title>
   <style>
     * {
@@ -147,6 +148,46 @@
       color: #6b7280;
       margin-top: 8px;
     }
+
+    @media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+
+  .status {
+    font-size: 0.8rem;
+  }
+
+  .cell {
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
