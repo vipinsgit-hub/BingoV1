@@ -275,7 +275,7 @@
     function toggleCell(row, col) {
       // Don't allow clicking to unmark the free space icon if you want
       // You can comment this condition if you want it clickable
-      if (row === 2 && col === 2) return;
+      //if (row === 2 && col === 2) return;
 
       marked[row][col] = !marked[row][col];
       cells[row][col].classList.toggle('marked', marked[row][col]);
