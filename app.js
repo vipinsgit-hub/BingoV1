@@ -4,10 +4,9 @@ const bingoTextEl = document.getElementById('bingoText');
 const newBoardBtn = document.getElementById('newBoardBtn');
 
 const SIZE = 5;
-let cells = []; // store DOM elements
-let marked = []; // 2D array of booleans
+let cells = []; 
+let marked = []; 
 
-// Generate array [1, 2, ..., 25] and shuffle
 function generateNumbers() {
   const nums = [];
   for (let i = 1; i <= SIZE * SIZE; i++) nums.push(i);
@@ -39,13 +38,6 @@ function createBoard() {
       const number = nums[idx++];
       cell.textContent = number;
 
-      // Optional: make center cell a FREE space
-      // if (row === 2 && col === 2) {
-      //   cell.textContent = '★';
-      //   cell.classList.add('free', 'marked'); 
-      //   marked[row][col] = true;
-      // }
-
       cell.addEventListener('click', () => {
         toggleCell(row, col);
       });
@@ -59,10 +51,7 @@ function createBoard() {
 }
 
 function toggleCell(row, col) {
-  // Don't allow clicking to unmark the free space icon if you want
-  // You can comment this condition if you want it clickable
-  // if (row === 2 && col === 2) return;
-
+ 
   marked[row][col] = !marked[row][col];
   cells[row][col].classList.toggle('marked', marked[row][col]);
   updateLines();
@@ -88,7 +77,7 @@ function updateLines() {
     if (colComplete) lines++;
   }
 
-  // Diagonal 1 (top-left to bottom-right)
+  
   let diag1 = true;
   for (let i = 0; i < SIZE; i++) {
     if (!marked[i][i]) {
@@ -98,7 +87,7 @@ function updateLines() {
   }
   if (diag1) lines++;
 
-  // Diagonal 2 (top-right to bottom-left)
+  
   let diag2 = true;
   for (let i = 0; i < SIZE; i++) {
     if (!marked[i][SIZE - 1 - i]) {
